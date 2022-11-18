@@ -3,6 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace MAB.PostcodeUtils
 {
+    /// <summary>
+    /// Represents a UK Postcode.
+    /// </summary>
     public struct UkPostcode
     {
         private const int _inwardLength = 3;
@@ -10,6 +13,15 @@ namespace MAB.PostcodeUtils
 
         private static readonly Regex _spaces = new Regex(@"\s+", RegexOptions.Compiled);
 
+        /// <summary>
+        /// Creates a new UkPostcode instance.
+        /// </summary>
+        /// <param name="outward">The outward postcode.</param>
+        /// <param name="area">The outward postcode area.</param>
+        /// <param name="district">The outward postcode district.</param>
+        /// <param name="inward">The inward postcode.</param>
+        /// <param name="sector">The inward postcode sector.</param>
+        /// <param name="unit">The inward postcode unit.</param>
         public UkPostcode(
             string outward,
             string area,
@@ -29,20 +41,47 @@ namespace MAB.PostcodeUtils
             Formatted = Outward + " " + Inward;
         }
 
+        /// <summary>
+        /// The full postcode, formatted with a space.
+        /// </summary>
         public string Formatted { get; }
 
+        /// <summary>
+        /// The outward postcode.
+        /// </summary>
         public string Outward { get; }
 
+        /// <summary>
+        /// The outward postcode area.
+        /// </summary>
         public string Area { get; }
 
+        /// <summary>
+        /// The outward postcode district.
+        /// </summary>
         public string District { get; }
 
+        /// <summary>
+        /// The inward postcode.
+        /// </summary>
         public string Inward { get; }
 
+        /// <summary>
+        /// The inward postcode sector.
+        /// </summary>
         public string Sector { get; }
 
+        /// <summary>
+        /// The inward postcode unit.
+        /// </summary>
         public string Unit { get; }
 
+        /// <summary>
+        /// Converts the string representation of a UK postcode to a <see cref="UkPostcode"/> value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="postcode"></param>
+        /// <returns></returns>
         public static bool TryParse(string value, out UkPostcode postcode)
         {
             postcode = default;
