@@ -1,49 +1,54 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<IncludeSymbols>False</IncludeSymbols>
-		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-		<Authors>markashleybell</Authors>
-		<Description>Utilities for working with postal codes (with a focus on the UK).</Description>
-		<PackageProjectUrl>https://github.com/markashleybell/MAB.PostcodeUtils</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/markashleybell/MAB.PostcodeUtils.git</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageTags>postcode;parsing</PackageTags>
-		<Version>1.0.0-beta1</Version>
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<EmbedUntrackedSources>true</EmbedUntrackedSources>
-		<DebugType>embedded</DebugType>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageIcon>icon.png</PackageIcon>
-	</PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <IncludeSymbols>False</IncludeSymbols>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+        <Authors>markashleybell</Authors>
+        <Description>Utilities for working with postal codes (with a focus on the UK).</Description>
+        <PackageProjectUrl>https://github.com/markashleybell/MAB.PostcodeUtils</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/markashleybell/MAB.PostcodeUtils.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>postcode;parsing</PackageTags>
+        <Version>1.0.0-beta1</Version>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <DebugType>embedded</DebugType>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>icon.png</PackageIcon>
+        <CodeAnalysisRuleSet>..\..\MAB.PostcodeUtils.ruleset</CodeAnalysisRuleSet>
+    </PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
-		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-	</PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<None Include="..\..\docs\icon.png">
-		  <Pack>True</Pack>
-		  <PackagePath>\</PackagePath>
-		</None>
-		<None Include="..\..\LICENSE.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-		<None Include="..\..\README.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-	</ItemGroup>
+    <ItemGroup>
+        <None Include="..\..\docs\icon.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\LICENSE.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
 
 </Project>

@@ -14,15 +14,14 @@ namespace MAB.PostcodeUtils.Test
                 "A9 9AA",
                 "A99 9AA",
                 "AA9 9AA",
-                "AA99 9AA"
+                "AA99 9AA",
             };
 
             foreach (var pattern in validPatterns)
             {
                 var result = UkPostcode.TryParse(pattern, out var postcode);
 
-                Assert.Multiple(() =>
-                {
+                Assert.Multiple(() => {
                     Assert.That(result, Is.EqualTo(true));
                     Assert.That(postcode.Formatted, Is.EqualTo(pattern));
                 });
@@ -39,7 +38,7 @@ namespace MAB.PostcodeUtils.Test
                 "9A9A 9AA",
                 "A9A AAA",
                 "A9 9A",
-                "A9999 9AAAA"
+                "A9999 9AAAA",
             };
 
             foreach (var pattern in validPatterns)
@@ -55,8 +54,7 @@ namespace MAB.PostcodeUtils.Test
         {
             var result = UkPostcode.TryParse("A12BC", out var postcode);
 
-            Assert.Multiple(() =>
-            {
+            Assert.Multiple(() => {
                 Assert.That(result, Is.EqualTo(true));
                 Assert.That(postcode.Formatted, Is.EqualTo("A1 2BC"));
                 Assert.That(postcode.Outward, Is.EqualTo("A1"));
@@ -73,8 +71,7 @@ namespace MAB.PostcodeUtils.Test
         {
             var result = UkPostcode.TryParse("A123BC", out var postcode);
 
-            Assert.Multiple(() =>
-            {
+            Assert.Multiple(() => {
                 Assert.That(result, Is.EqualTo(true));
                 Assert.That(postcode.Formatted, Is.EqualTo("A12 3BC"));
                 Assert.That(postcode.Outward, Is.EqualTo("A12"));
@@ -91,8 +88,7 @@ namespace MAB.PostcodeUtils.Test
         {
             var result = UkPostcode.TryParse("A1B2CD", out var postcode);
 
-            Assert.Multiple(() =>
-            {
+            Assert.Multiple(() => {
                 Assert.That(result, Is.EqualTo(true));
                 Assert.That(postcode.Formatted, Is.EqualTo("A1B 2CD"));
                 Assert.That(postcode.Outward, Is.EqualTo("A1B"));
@@ -109,8 +105,7 @@ namespace MAB.PostcodeUtils.Test
         {
             var result = UkPostcode.TryParse("AB12CD", out var postcode);
 
-            Assert.Multiple(() =>
-            {
+            Assert.Multiple(() => {
                 Assert.That(result, Is.EqualTo(true));
                 Assert.That(postcode.Formatted, Is.EqualTo("AB1 2CD"));
                 Assert.That(postcode.Outward, Is.EqualTo("AB1"));
@@ -127,8 +122,7 @@ namespace MAB.PostcodeUtils.Test
         {
             var result = UkPostcode.TryParse("AB123CD", out var postcode);
 
-            Assert.Multiple(() =>
-            {
+            Assert.Multiple(() => {
                 Assert.That(result, Is.EqualTo(true));
                 Assert.That(postcode.Formatted, Is.EqualTo("AB12 3CD"));
                 Assert.That(postcode.Outward, Is.EqualTo("AB12"));
@@ -145,8 +139,7 @@ namespace MAB.PostcodeUtils.Test
         {
             var result = UkPostcode.TryParse("AB1C2DE", out var postcode);
 
-            Assert.Multiple(() =>
-            {
+            Assert.Multiple(() => {
                 Assert.That(result, Is.EqualTo(true));
                 Assert.That(postcode.Formatted, Is.EqualTo("AB1C 2DE"));
                 Assert.That(postcode.Outward, Is.EqualTo("AB1C"));

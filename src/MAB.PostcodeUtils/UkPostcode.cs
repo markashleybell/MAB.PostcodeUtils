@@ -14,7 +14,7 @@ namespace MAB.PostcodeUtils
         private static readonly Regex _spaces = new Regex(@"\s+", RegexOptions.Compiled);
 
         /// <summary>
-        /// Creates a new UkPostcode instance.
+        /// Initializes a new instance of the <see cref="UkPostcode"/> struct.
         /// </summary>
         /// <param name="outward">The outward postcode.</param>
         /// <param name="area">The outward postcode area.</param>
@@ -42,46 +42,46 @@ namespace MAB.PostcodeUtils
         }
 
         /// <summary>
-        /// The full postcode, formatted with a space.
+        /// Gets the full postcode, formatted with a space.
         /// </summary>
         public string Formatted { get; }
 
         /// <summary>
-        /// The outward postcode.
+        /// Gets the outward postcode.
         /// </summary>
         public string Outward { get; }
 
         /// <summary>
-        /// The outward postcode area.
+        /// Gets the outward postcode area.
         /// </summary>
         public string Area { get; }
 
         /// <summary>
-        /// The outward postcode district.
+        /// Gets the outward postcode district.
         /// </summary>
         public string District { get; }
 
         /// <summary>
-        /// The inward postcode.
+        /// Gets the inward postcode.
         /// </summary>
         public string Inward { get; }
 
         /// <summary>
-        /// The inward postcode sector.
+        /// Gets the inward postcode sector.
         /// </summary>
         public string Sector { get; }
 
         /// <summary>
-        /// The inward postcode unit.
+        /// Gets the inward postcode unit.
         /// </summary>
         public string Unit { get; }
 
         /// <summary>
         /// Converts the string representation of a UK postcode to a <see cref="UkPostcode"/> value.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="postcode"></param>
-        /// <returns></returns>
+        /// <param name="value">A postcode string.</param>
+        /// <param name="postcode">A <see cref="UkPostcode"/> instance representing the parsed postcode value.</param>
+        /// <returns>true if the postcode string was parsed successfully; otherwise, false.</returns>
         public static bool TryParse(string value, out UkPostcode postcode)
         {
             postcode = default;
