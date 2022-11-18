@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<IncludeSymbols>True</IncludeSymbols>
+		<IncludeSymbols>False</IncludeSymbols>
 		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 		<Authors>markashleybell</Authors>
 		<Description>Utilities for working with postal codes (with a focus on the UK).</Description>
