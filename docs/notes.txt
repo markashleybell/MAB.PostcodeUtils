@@ -1,0 +1,10 @@
+https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom
+
+https://en.wikipedia.org/wiki/BT_postcode_area
+
+https://en.wikipedia.org/wiki/GY_postcode_area
+https://en.wikipedia.org/wiki/IM_postcode_area
+https://en.wikipedia.org/wiki/JE_postcode_area
+
+https://geoportal.statistics.gov.uk/datasets/ons::ons-postcode-directory-may-2022-1/about
+https://osdatahub.os.uk/downloads/open/CodePointOpen
